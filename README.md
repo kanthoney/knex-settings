@@ -22,7 +22,7 @@ var db = require('knex')({ dialect: 'sqlite3', connection:{ filename: 'test.sqli
 var settings = require('knex-settings')(db, 'settings');
 ```
 
-* Use `migrate_up` and `migrate_down` methods in a migrations file (or otherwise) to create the database table
+* Use `migrate_up` and `migrate_down` methods in a migrations file (or otherwise) to create the database table. Both `migrate_up` and `migrate_down` return promises.
 
 ```
 exports.up = function()
