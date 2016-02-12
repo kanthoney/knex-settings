@@ -1,0 +1,29 @@
+{
+  "name": "knex-settings",
+  "version": "0.0.0",
+  "description": "Simple key-value settings database for Knex",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kanthoney/knex-settings"
+  },
+  "keywords": [
+    "knex",
+    "key",
+    "value",
+    "settings",
+    "database"
+  ],
+  "author": "Kevin Anthoney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanthoney/knex-settings/issues"
+  },
+  "devDependencies": {
+    "knex": "^0.10.0-rc1",
+    "sqlite3": "^3.1.1"
+  }
+}
