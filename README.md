@@ -2,6 +2,12 @@
 
 `knex-settings` encapsulates a simple key-value table, using the [`knex`](http://knexjs.org) query builder.
 
+## Installation
+
+```
+npm install knex-settings
+```
+
 ## Usage
 
 1. Create your `knex` instance.
