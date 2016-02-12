@@ -60,12 +60,11 @@ settings.get('non_existent_key', 'default_value')
 {
   console.log(value); // 'default_value'
 });
-
 ```
 
 6. Use the `del(key)` method to delete a key. A promise is returned.
 
-```
+ ```
 settings.del('k')
 .then(function() {
   return settings.get('k');
