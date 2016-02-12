@@ -1,6 +1,6 @@
 # knex-settings
 
-`knex-settings` encapsulates a simple key-value table, using the [`knex`](knexjs.org) query builder.
+`knex-settings` encapsulates a simple key-value table, using the [`knex`](http://knexjs.org) query builder.
 
 ## Usage
 
