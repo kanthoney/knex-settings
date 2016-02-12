@@ -10,21 +10,21 @@ npm install knex-settings
 
 ## Usage
 
-* Create your `knex` instance.
+1. Create your `knex` instance.
 
-```
+ ```
 var db = require('knex')({ dialect: 'sqlite3', connection:{ filename: 'test.sqlite' } });
 ```
 
-* Create a `knex-settings` object, passing the `knex` instance and the name of the settings table
+2. Create a `knex-settings` object, passing the `knex` instance and the name of the settings table
 
-```
+ ```
 var settings = require('knex-settings')(db, 'settings');
 ```
 
-* Use `migrate_up` and `migrate_down` methods in a migrations file (or otherwise) to create the database table. Both `migrate_up` and `migrate_down` return promises.
+3. Use `migrate_up` and `migrate_down` methods in a migrations file (or otherwise) to create the database table. Both `migrate_up` and `migrate_down` return promises.
 
-```
+ ```
 exports.up = function()
 {
   return settings.migrate_up();
@@ -36,15 +36,15 @@ exports.down = function()
 }
 ```
 
-* Use the `set(key)` method to set values for a key. `set` returns a promise.
+4. Use the `set(key)` method to set values for a key. `set` returns a promise.
 
-```
+ ```
 settings.set('k', 'v');
 ```
 
-* Use the `get(key, [default_value])` method to get a value. A promise is returned with the value.
+5. Use the `get(key, [default_value])` method to get a value. A promise is returned with the value.
 
-```
+ ```
 settings.get('k')
 .then(function(value) {
   console.log(value); // 'v'
@@ -63,9 +63,9 @@ settings.get('non_existent_key', 'default_value')
 
 ```
 
-* Use the `del(key)` method to delete a key. A promise is returned.
+6. Use the `del(key)` method to delete a key. A promise is returned.
 
-```
+ ```
 settings.del('k')
 .then(function() {
   return settings.get('k');
