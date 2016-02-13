@@ -106,5 +106,50 @@ describe('Set and get settings test', function() {
       });
   });
 
+  it("should set value for key 'test' to object { value: 'test' }", function(done) {
+
+    settings.set('test', { value: 'test' })
+      .then(function() {
+        return settings.get('test');
+      })
+      .then(function(value) {
+        expect(value.value).toEqual('test');
+      })
+      .finally(function() {
+        done();
+      });
+  });
+
+  it("should set value for key 'test' to array [1, 2, 3]", function(done) {
+
+    settings.set('test', [1, 2, 3])
+      .then(function() {
+        return settings.get('test');
+      })
+      .then(function(value) {
+        expect(value.length).toEqual(3);
+        expect(value[0]).toEqual(1);
+        expect(value[1]).toEqual(2);
+        expect(value[2]).toEqual(3);
+      })
+      .finally(function() {
+        done();
+      });
+  });
+
+  it("should set value for key 'test' to number 1.0", function(done) {
+
+    settings.set('test', 1.0)
+      .then(function() {
+        return settings.get('test');
+      })
+      .then(function(value) {
+        expect(value).toEqual(1.0);
+      })
+      .finally(function() {
+        done();
+      });
+  });
+
 });
 

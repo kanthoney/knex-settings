@@ -17,9 +17,9 @@ module.exports = function(db, table_name)
 
   var set = function(key, value)
   {
-    return db(table_name).insert({key_name:key, value:value})
+    return db(table_name).insert({key_name:key, value:JSON.stringify(value)})
       .catch(function() {
-        return db(table_name).where({key_name: key}).update({value: value});
+        return db(table_name).where({key_name: key}).update({value: JSON.stringify(value)});
       });
   }
 
@@ -30,7 +30,7 @@ module.exports = function(db, table_name)
         if(rows.length == 0) {
           return default_value;
         }
-        return rows[0].value;
+        return JSON.parse(rows[0].value);
       });
   }
 

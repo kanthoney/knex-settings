@@ -27,12 +27,12 @@ var settings = require('knex-settings')(db, 'settings');
  ```
 exports.up = function()
 {
-  return settings.migrate_up();
+    return settings.migrate_up();
 }
 
 exports.down = function()
 {
-  return settings.migrate_down();
+    return settings.migrate_down();
 }
 ```
 
@@ -47,18 +47,18 @@ settings.set('k', 'v');
  ```
 settings.get('k')
 .then(function(value) {
-  console.log(value); // 'v'
+    console.log(value); // 'v'
 });
 
 settings.get('non_existent_key')
 .then(function(value) {
-  console.log(value); // value undefined
+    console.log(value); // value undefined
 });
 
 settings.get('non_existent_key', 'default_value')
 .then(function(value)
 {
-  console.log(value); // 'default_value'
+    console.log(value); // 'default_value'
 });
 ```
 
@@ -67,10 +67,10 @@ settings.get('non_existent_key', 'default_value')
  ```
 settings.del('k')
 .then(function() {
-  return settings.get('k');
+    return settings.get('k');
 })
 .then(function(value) {
-  console.log(value); // value undefined
+    console.log(value); // value undefined
 });
 ```
 
