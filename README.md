@@ -13,7 +13,7 @@ npm install knex-settings
 1. Create your `knex` instance.
 
  ```
-var db = require('knex')({ dialect: 'sqlite3', connection:{ filename: 'test.sqlite' } });
+var db = require('knex')({ client: 'sqlite3', connection:{ filename: 'test.sqlite' } });
 ```
 
 2. Create a `knex-settings` object, passing the `knex` instance and the name of the settings table
